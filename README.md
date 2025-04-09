@@ -1,4 +1,3 @@
-```markdown
 # 🚗 Aplicación de Gestión de Piezas Automotrices
 
 ## 📝 Descripción
@@ -15,10 +14,11 @@ Aplicación desarrollada con **React Native** para gestionar el inventario de pi
 - [🔗 npm](https://www.npmjs.com/) (v6 o superior)  
 - [🔗 Expo CLI](https://docs.expo.dev/get-started/installation/)
 
-Instalar Expo CLI:
+### 🧰 Instalar Expo CLI
+
 ```bash
 npm install -g expo-cli
-```
+
 
 ## 🚀 Instalación
 
