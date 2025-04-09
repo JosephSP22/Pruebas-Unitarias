@@ -14,11 +14,10 @@ Aplicación desarrollada con **React Native** para gestionar el inventario de pi
 - [🔗 npm](https://www.npmjs.com/) (v6 o superior)  
 - [🔗 Expo CLI](https://docs.expo.dev/get-started/installation/)
 
-### 🧰 Instalar Expo CLI
-
+## 🧰 Instalar Expo CLI
 ```bash
 npm install -g expo-cli
-
+```
 
 ## 🚀 Instalación
 
@@ -26,7 +25,7 @@ npm install -g expo-cli
 ```bash
 git clone https://github.com/JosephSP22/Pruebas-Unitarias.git
 cd Pruebas-Unitarias
-
+```
 
 2. 📦 **Instalar dependencias**
 ```bash
@@ -101,7 +100,7 @@ npm test -- --watch
 
 # 🧼 Limpiar caché
 npm test -- --clearCache
-
+```
 
 ## 🛠️ Solución de Problemas
 
@@ -122,4 +121,5 @@ npm install
 ```bash
 npm list @testing-library/react-native
 npm list jest-expo
+```
 ```
