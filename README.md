@@ -56,6 +56,8 @@ Pruebas-Unitarias/
 └── App.js                   
 ```
 
+
+
 ## 🧪 Pruebas Unitarias
 
 ### Componentes Testeados
@@ -136,3 +138,81 @@ npm test -- --clearCache
    npm list jest-expo
    ```
 
+## ⚙️ Configuración de Pruebas Unitarias
+
+### Jest Configuration (jest.config.js)
+Este archivo configura el entorno de pruebas de Jest:
+
+```javascript
+module.exports = {
+  preset: 'jest-expo',  // Usa la configuración predeterminada de Expo
+  setupFiles: ['./jest.setup.js'],  // Archivo de configuración inicial
+  transformIgnorePatterns: [
+    'node_modules/(?!(jest-)?react-native|@react-native(-community)?|expo(nent)?|...)',
+  ],  // Especifica qué módulos deben transformarse
+  moduleNameMapper: {
+    '^react-native-vector-icons/MaterialIcons$': '<rootDir>/__mocks__/materialIconsMock.js'
+  },  // Mapea importaciones a mocks
+  setupFilesAfterEnv: ['@testing-library/jest-native/extend-expect']  // Extiende las aserciones de Jest
+};
+```
+
+**¿Por qué es importante?**
+- Define el entorno de pruebas
+- Configura transformaciones de código
+- Establece mocks para dependencias
+- Gestiona la carga de módulos
+
+### Jest Setup (jest.setup.js)
+Configura el entorno antes de ejecutar las pruebas:
+
+```javascript
+import 'react-native-gesture-handler/jestSetup';
+
+// Mock para react-native-reanimated
+jest.mock('react-native-reanimated', () => ({
+  default: {
+    call: () => {},
+  },
+  createAnimatedComponent: (component) => component,
+}));
+
+// Mock para navegación
+jest.mock('@react-navigation/native', () => ({
+  useNavigation: () => ({
+    navigate: jest.fn(),
+  }),
+}));
+
+// Mock para iconos
+jest.mock('react-native-vector-icons/MaterialIcons', () => 'Icon');
+```
+
+**¿Por qué es importante?**
+- Inicializa mocks globales
+- Configura el entorno de pruebas
+- Simula módulos nativos
+- Prepara las dependencias de navegación
+
+### Babel Configuration (babel.config.js)
+Configura la transformación del código:
+
+```javascript
+module.exports = function(api) {
+  api.cache(true);
+  return {
+    presets: ['babel-preset-expo'],
+    env: {
+      test: {
+        plugins: ['@babel/plugin-transform-runtime']
+      }
+    }
+  };
+};
+```
+
+**¿Por qué es importante?**
+- Transforma código moderno a compatible
+- Habilita características de ES6+
+- Configura entornos específicos
+- Gestiona plugins de Babel
