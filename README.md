@@ -24,9 +24,9 @@ npm install -g expo-cli
 
 1. 📥 **Clonar el repositorio**
 ```bash
-git clone [URL_DEL_REPOSITORIO]
-cd Prueba-App
-```
+git clone https://github.com/JosephSP22/Pruebas-Unitarias.git
+cd Pruebas-Unitarias
+
 
 2. 📦 **Instalar dependencias**
 ```bash
@@ -45,7 +45,7 @@ npm install --save-dev react-native-reanimated
 
 ## 🗂️ Estructura del Proyecto
 ```
-Prueba-App/
+Pruebas-Unitarias/
 ├── __tests__/
 │   ├── DetalleModal.test.js
 │   └── HomeScreen.test.js
@@ -101,7 +101,7 @@ npm test -- --watch
 
 # 🧼 Limpiar caché
 npm test -- --clearCache
-```
+
 
 ## 🛠️ Solución de Problemas
 
